@@ -1,6 +1,6 @@
 <?php
 // Pantalla de presentación: punto de entrada del sitio. No consulta la base de datos.
-require __DIR__ . '/functions.php';
+require __DIR__ . 'functions.php';
 $go = app_url('inicio.php');
 $arrow = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
 $logo = '<svg viewBox="0 0 24 24" width="28" height="28"><path fill="#f26b1d" d="M22 19l-8.5-8.5a6 6 0 0 0-7.7-7.7l3.9 3.9-2.8 2.8-3.9-3.9a6 6 0 0 0 7.7 7.7L19 22z"/></svg>';
