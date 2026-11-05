@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '/functions.php';
+require __DIR__ . 'functions.php';
 $t = q('SELECT COALESCE(SUM(cantidad_total),0) tot, COALESCE(SUM(disponible),0) disp, COALESCE(SUM(prestadas),0) pre, COALESCE(SUM(en_mant),0) man, COALESCE(SUM(fuera),0) fue FROM v_herramientas WHERE activo=1')->fetch();
 $pend = (int)q("SELECT COUNT(*) FROM prestamos WHERE estado='activo'")->fetchColumn();
 $atr = q("SELECT p.*, h.nombre hn, CONCAT(pe.nombre,' ',pe.apellido) persona FROM prestamos p JOIN herramientas h ON h.id=p.herramienta_id JOIN personal pe ON pe.id=p.personal_id WHERE p.estado='activo' AND p.fecha_prevista < NOW() ORDER BY p.fecha_prevista")->fetchAll();
